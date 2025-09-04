@@ -6,7 +6,7 @@ var barrel_scene = preload("res://Sence/object/barrel.tscn")
 var bird_scene = preload("res://Sence/object/bird.tscn")
 var obstacle_types := [stump_scene, rock_scene, barrel_scene]
 var obstacles : Array
-var bird_heights := [200, 300]
+var bird_heights := [150, 250]
 
 const Dino_start_pos := Vector2i(150,596)
 const  Cam_start_pos := Vector2i(576,324)
@@ -21,7 +21,7 @@ var speed : float
 var speed_by_time : float = 0
 var start_speed : float = 0.2
 var max_speed : float = 5
-const SPEED_MODIFIER : int = 6000
+const SPEED_MODIFIER : int = 10000
 
 var difficulty 
 var ground_height : int
@@ -67,7 +67,7 @@ func _process(delta):
 		speed = start_speed + speed_by_time
 		if speed > max_speed:
 			speed = max_speed
-		
+		adjust_difficulty()
 		#generate obstacles
 		generate_obs()
 		
@@ -126,7 +126,7 @@ func generate_obs():
 				add_obs(obs, obs_x, obs_y)
 
 func adjust_difficulty():
-	difficulty = speed_by_time*10
+	difficulty = speed_by_time*20
 	if difficulty > MAX_DIFFICULTY:
 		difficulty = MAX_DIFFICULTY
 
