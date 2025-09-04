@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://h3j6ihe0rh47"]
+
+[ext_resource type="Texture2D" uid="uid://b3x5y47bwict1" path="res://Asset/Object/Area/atlas-props.png" id="1_s4yfr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ll88g"]
+atlas = ExtResource("1_s4yfr")
+region = Rect2(0, 18, 31, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vp1e4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ll88g")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Stone" type="Area2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_vp1e4")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(1.05769, 0.916666)
+scale = Vector2(3.94231, 3.83333)
+polygon = PackedVector2Array(-12, 7, -9, -6, -5, -8, 4, -8, 8, -2, 14, 2, 14, 7)

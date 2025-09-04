@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://nmd1fk3p42g3"]
+
+[ext_resource type="Texture2D" uid="uid://b3x5y47bwict1" path="res://Asset/Object/Area/atlas-props.png" id="1_2f7us"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oj8xu"]
+atlas = ExtResource("1_2f7us")
+region = Rect2(0, 55, 50, 35)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ogru6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oj8xu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_m1rv6"]
+radius = 11.0
+height = 42.0
+
+[node name="Bush" type="Area2D"]
+scale = Vector2(2.5, 2.5)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_ogru6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_m1rv6")

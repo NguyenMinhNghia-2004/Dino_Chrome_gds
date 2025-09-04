@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7hqr5vd2dpww"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hktbd"]
+load_path = "res://.godot/imported/ground.png-d2083c23efb754da1e73c992661f6bde.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ykjr7"]
+size = Vector2(2304, 80)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.629005, 0.754237, 1, 1)
+self_modulate = Color(0.0941176, 0.87451, 0.996078, 0.784314)
+texture = SubResource("CompressedTexture2D_hktbd")
+centered = false
+offset = Vector2(0, 555)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1152, 608)
+shape = SubResource("RectangleShape2D_ykjr7")

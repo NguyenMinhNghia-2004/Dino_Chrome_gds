@@ -1,0 +1,44 @@
+[gd_scene load_steps=9 format=3 uid="uid://bdkf1hv1c52gr"]
+
+[ext_resource type="Script" path="res://src/game_play.gd" id="1_6nx8i"]
+[ext_resource type="PackedScene" uid="uid://cphbjujn55epn" path="res://Sence/parallax_background.tscn" id="1_d2bfk"]
+[ext_resource type="PackedScene" uid="uid://cp37jbcd3evks" path="res://Sence/object/character.tscn" id="2_qnkt5"]
+[ext_resource type="PackedScene" uid="uid://b7hqr5vd2dpww" path="res://Sence/static_body.tscn" id="3_sv2hm"]
+[ext_resource type="PackedScene" uid="uid://degb6vv7hqa48" path="res://Sence/object/shadow.tscn" id="5_whr4m"]
+[ext_resource type="PackedScene" uid="uid://d4nskiuxt1ytv" path="res://Sence/hud.tscn" id="6_ctxkv"]
+[ext_resource type="PackedScene" uid="uid://dbuyawi3fcwhe" path="res://Sence/game_over.tscn" id="7_gbyuw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d431h"]
+size = Vector2(16, 648)
+
+[node name="Game_Play" type="Node"]
+script = ExtResource("1_6nx8i")
+
+[node name="border" type="StaticBody2D" parent="."]
+
+[node name="border_L" type="CollisionShape2D" parent="border"]
+position = Vector2(0, 324)
+shape = SubResource("RectangleShape2D_d431h")
+
+[node name="border_R" type="CollisionShape2D" parent="border"]
+position = Vector2(1152, 328)
+shape = SubResource("RectangleShape2D_d431h")
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("1_d2bfk")]
+
+[node name="Ground" parent="." instance=ExtResource("3_sv2hm")]
+
+[node name="Dino_ice" parent="." instance=ExtResource("2_qnkt5")]
+position = Vector2(120, 496)
+
+[node name="Shadow" parent="." instance=ExtResource("5_whr4m")]
+position = Vector2(144, 544)
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+
+[node name="HUD" parent="." instance=ExtResource("6_ctxkv")]
+
+[node name="GameOver" parent="." instance=ExtResource("7_gbyuw")]
+process_mode = 2
+visible = false
