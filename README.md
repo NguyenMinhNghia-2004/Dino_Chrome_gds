@@ -1,108 +1,79 @@
 # Dino Chrome (Dino_Chrome_gds)
 
-Phiên bản mô phỏng trò chơi "Dinosaur" của Chrome, được triển khai bằng HTML/CSS/JavaScript.
+Phiên bản mô phỏng trò chơi "Dinosaur" của Chrome, phát triển bằng **Godot Engine** với **GDScript**.
 
-Mục đích: dự án này là một bản sao (hoặc cải tiến nhỏ) của trò chơi Dino trong Google Chrome, dùng để học tập và thực hành JavaScript game đơn giản.
+## Video Demo
+
+[![Xem video demo trên YouTube](https://img.youtube.com/vi/2JlQTFiN_MU/0.jpg)](https://www.youtube.com/watch?v=2JlQTFiN_MU)
+
+---
+
+## Mục đích
+
+Dự án này giúp học lập trình game với Godot thông qua việc tái tạo trò chơi Dino nổi tiếng của Chrome.
 
 ---
 
 ## Nội dung chính
 
-- index.html: trang chính chạy trò chơi.
-- css/: chứa các tệp CSS (nếu có).
-- js/: chứa mã JavaScript chính của trò chơi.
-- assets/: hình ảnh, âm thanh, và tài nguyên khác.
-
-> Lưu ý: Cấu trúc thư mục có thể khác với repo hiện tại; hãy kiểm tra lại nếu cần.
+- Godot project files (`project.godot`, `scenes/`, `scripts/`, `assets/`).
+- `scenes/`: chứa các scene chính của game.
+- `scripts/`: chứa các script GDScript điều khiển logic game.
+- `assets/`: hình ảnh, âm thanh, font chữ phục vụ cho game.
 
 ---
 
 ## Tính năng
 
-- Nhảy để tránh chướng ngại vật (cactus).
-- Hạ thấp/né (nếu được hỗ trợ).
+- Nhảy để tránh chướng ngại vật.
 - Điểm số tăng theo thời gian.
+- Game kết thúc khi va chạm.
+- Hỗ trợ phím bấm.
 - Giao diện đơn giản, dễ hiểu.
-- Hỗ trợ phím bấm và chạm (mobile).
 
 ---
 
 ## Yêu cầu
 
-- Trình duyệt hiện đại (Chrome, Edge, Firefox, Safari).
-- Node.js (chỉ nếu bạn muốn chạy server phát triển hoặc build). Không bắt buộc nếu chỉ mở tệp HTML trực tiếp.
+- **Godot Engine** (khuyến nghị từ 3.5 trở lên).
+- Máy tính chạy được Godot (Windows, macOS, Linux).
 
 ---
 
-## Chạy nhanh (không cài đặt)
+## Chạy dự án
 
 1. Clone repo:
-
+   ```bash
    git clone https://github.com/NguyenMinhNghia-2004/Dino_Chrome_gds.git
    cd Dino_Chrome_gds
+   ```
 
-2. Mở `index.html` bằng trình duyệt (kéo thả hoặc chuột phải -> Open with...)
+2. Mở Godot Engine, chọn "Import" và trỏ đến thư mục dự án.
 
-Hoặc khởi chạy server tĩnh (được khuyến nghị để tránh một số hạn chế trình duyệt):
-
-- Dùng Python 3:
-
-  python -m http.server 8000
-
-  rồi truy cập http://localhost:8000
-
-- Hoặc dùng live-server (npm):
-
-  npm install -g live-server
-  live-server
+3. Chạy scene chính (`Main.tscn`).
 
 ---
 
 ## Hướng dẫn chơi
 
-- Phím Space / Mũi tên Lên: Nhảy.
-- Phím Mũi tên Xuống: Hạ thấp (nếu được hỗ trợ).
-- Chạm vào màn hình trên thiết bị di động để nhảy.
-- Tránh chạm vào chướng ngại vật; trò chơi kết thúc khi va chạm.
+- **Space** hoặc **↑**: Nhảy.
+- **↓**: Hạ thấp, né chướng ngại vật.
+- Tránh va chạm với chướng ngại vật để đạt điểm cao nhất.
 
 ---
 
 ## Tùy chỉnh & Phát triển
 
-- Thêm chướng ngại vật mới, thay đổi tốc độ hoặc thêm mức độ khó.
-- Thêm âm thanh khi nhảy/va chạm.
-- Lưu điểm số cao bằng localStorage.
-- Nếu dùng bundler (Webpack/Vite), cấu hình build tương ứng và thêm hướng dẫn trong README.
-
----
-
-## Cấu trúc gợi ý
-
-```
-Dino_Chrome_gds/
-├─ index.html
-├─ css/
-│  └─ styles.css
-├─ js/
-│  └─ game.js
-├─ assets/
-│  ├─ sprite.png
-│  └─ jump.wav
-└─ README.md
-```
+- Thêm obstacle mới, tăng độ khó.
+- Thêm âm thanh, hiệu ứng, hoạt ảnh.
+- Lưu điểm số cao với `File` hoặc `ConfigFile`.
+- Hỗ trợ xuất bản cho Android/Windows/Linux.
 
 ---
 
 ## Đóng góp
 
-Mọi đóng góp đều được hoan nghênh:
-- Tạo pull request để thêm tính năng hoặc sửa lỗi.
+- Tạo pull request để bổ sung tính năng hoặc sửa lỗi.
 - Mở issue để báo lỗi hoặc đề xuất cải tiến.
 
 ---
-
-## Bản quyền
-
-Bản quyền (c) 2025 NguyenMinhNghia-2004. Sử dụng theo giấy phép MIT (hoặc thay đổi theo ý bạn).
-
-Nếu bạn muốn mình đặt một license cụ thể, hãy cho biết.
